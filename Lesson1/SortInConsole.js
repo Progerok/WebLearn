@@ -1,6 +1,6 @@
-const http = require('http')
-const hostname = '127.0.0.1'
-const port = 5000
+
+// Файл вывода данных в консоль
+
 
 console.log("Программа запущена");
 
@@ -31,14 +31,3 @@ function bubbleSort(arr) {
 
 const sortedArr = bubbleSort(arr);
 console.log(sortedArr);     //вывод в консоль
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200
-  res.setHeader('Content-Type', 'text/plain')
-  res.end()
-
-})
-
-server.listen(port, hostname, () => {
-  console.log(`Ссылка на сервер в браузере: http://${hostname}:${port}/`)
-})
