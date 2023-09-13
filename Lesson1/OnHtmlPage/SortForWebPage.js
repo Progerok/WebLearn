@@ -7,30 +7,24 @@ const app = express();
 const host = '127.0.0.1';
 const port = 5000;
 
-const arr = [];
+var arr = [];
+var sortedArr = [];
+
+makeArr();    //заполнение массива
+  
+sortedArr = bubbleSort(arr);  //сортировка массива
 
 //app.use(express.static(__dirname + '/public'));
 
 app.set('views', __dirname + '/views'); // general config
+app.engine('html', require('ejs').renderFile); // set the view engine to ejs
 app.set('view engine', 'html');
 
 app.get("/", function(request, response) 
-{  
-  makeArr();    //заполнение массива
-  
-  const sortedArr = bubbleSort(arr);  //сортировка массива
-  
-  //res.send(__dirname + '/views/'+'WebPage.html');//'+host+':'+port);
-
-  console.log("Программа запущена");
-  console.log("Выводим массив случайных чисел.");
-  console.log(arr);   //вывод в консоль
-  console.log("Выводим отсортированный массив случайных чисел.");
-  console.log(sortedArr);    //вывод в консоль
-
-  response.render('WebPage', 
+{ 
+   response.render('WebPage', 
   {
-    title: 'Массив для сортировки',
+    title: 'Вывод массива случайных данных.',
     startdata: arr,
     sortdata: sortedArr,
   });    
@@ -47,7 +41,7 @@ function makeArr()
 {
   arr.length = 0
 
-  for (let i = 0; i < 10000; i++) {
+  for (let i = 0; i < 15; i++) {
     arr.push(Math.floor(Math.random() * 100));
   }
 };
