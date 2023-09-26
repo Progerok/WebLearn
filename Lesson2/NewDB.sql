@@ -7,7 +7,7 @@ CREATE TABLE Students (
     id SERIAL PRIMARY KEY,
     FIO VARCHAR(255) NOT NULL,
     Born DATE NOT NULL,
-    id_Group INTEGER NOT NULL,
+    id_Group INTEGER REFERENCES Groups(id),
     start_year INTEGER NOT NULL
 )
 
