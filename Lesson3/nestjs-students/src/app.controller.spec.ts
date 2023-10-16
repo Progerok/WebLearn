@@ -14,9 +14,9 @@ describe('AppController', () => {
     appController = app.get<AppController>(AppController);
   });
 
-  /* describe('root', () => {
+  describe('root', () => {
     it('Выводим студентов!"', () => {
       expect(appController.getStud()).toBe('Студенты.');
     });
-  }); */
+  });
 });

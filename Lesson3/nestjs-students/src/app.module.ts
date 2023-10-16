@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Students } from './students/student.entity';
+import { StudentsModule } from './Students/students.module';
 
 
 @Module({
@@ -17,6 +17,7 @@ import { Students } from './students/student.entity';
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
+    StudentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
