@@ -8,12 +8,22 @@ export class Students {
   @Column({ length: 100 })
   FIO: string;
 
-  @Column()
+/*   @Column()
   Born: Date;
   
   @Column()
   id_Group: number;
   
   @Column()
-  start_year: number;
+  start_year: number; */
+  
+
+  @Column({ length: 100 })
+  Born: string;
+  
+  @Column({ length: 100 })
+  id_Group: string;
+  
+  @Column({ length: 100 })
+  start_year: string;
 }
