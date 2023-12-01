@@ -1,0 +1,14 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Web разработка ",
+  "main": "app.js",
+  "scripts": {
+    "nestjs_back-start:debug": "cd back && nest start --debug --watch",
+    "vue_front-start:debug": "cd front && npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Progerok/WebLearn.git"
+  }
+}
